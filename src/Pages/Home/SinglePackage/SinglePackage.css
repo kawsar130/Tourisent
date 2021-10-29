@@ -1,0 +1,4 @@
+.single-card {
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.2);
+    border: 10px solid rgba(255, 255, 255, 0.1);
+}

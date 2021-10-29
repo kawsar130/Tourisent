@@ -1,0 +1,7 @@
+.user-checkbox-container {
+    display: flex;
+}
+
+.new-user-checkbox {
+    color: rgb(46, 46, 139);
+}

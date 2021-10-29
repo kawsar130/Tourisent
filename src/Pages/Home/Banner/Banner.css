@@ -1,0 +1,16 @@
+.text-white {
+    text-decoration: none;
+}
+
+.banner-title {
+    font-size: 3vmax;
+}
+
+.banner-description {
+    font-size: 1.1vmax;
+}
+
+.carousel-caption {
+    background: rgba(80, 4, 4, 0.2);
+    border-radius: 20px;
+}
