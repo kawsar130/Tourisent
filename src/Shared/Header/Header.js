@@ -68,6 +68,20 @@ const Header = () => {
                         </Nav.Link>
                         {user?.email ? (
                             <div className="user-info">
+                                <Nav.Link
+                                    as={HashLink}
+                                    to="/addpackage"
+                                    className="nav-text"
+                                >
+                                    Add-Package
+                                </Nav.Link>
+                                <Nav.Link
+                                    as={HashLink}
+                                    to="/myorder"
+                                    className="nav-text"
+                                >
+                                    My-Order
+                                </Nav.Link>
                                 <img
                                     src={user.photoURL}
                                     alt=""
@@ -78,7 +92,7 @@ const Header = () => {
                                 </Navbar.Text>
                                 <Button
                                     onClick={logOut}
-                                    className="btn btn-info text-white btn-logout"
+                                    className="btn btn-warning text-white btn-logout"
                                 >
                                     {logoutIcon}
                                 </Button>

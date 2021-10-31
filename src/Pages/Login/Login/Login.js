@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useHistory, useLocation } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 import "./Login.css";
 
@@ -7,13 +8,32 @@ const Login = () => {
     const {
         signInUsingGoogle,
         user,
+        setUser,
         handleRegistration,
         handleEmailChange,
         handlePasswordChange,
         error,
         toggleLogin,
-        isLogin
+        isLogin,
+        setIsLoading
     } = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const redirect_url = location.state?.from || "/home";
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then((result) => {
+                history.push(redirect_url);
+                setUser(result.user);
+                console.log(result.user);
+            })
+            .finally(() => setIsLoading(false))
+            .catch((error) => {
+                console.log(error.message, error.code);
+            });
+    };
+
     return (
         <div className="p-5 mx-5">
             {user.email ? (
@@ -102,7 +122,7 @@ const Login = () => {
                             You can also sign in with Google
                         </h3>
                         <Button
-                            onClick={signInUsingGoogle}
+                            onClick={handleGoogleLogin}
                             variant="warning"
                             size="md"
                         >

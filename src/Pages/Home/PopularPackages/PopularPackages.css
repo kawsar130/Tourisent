@@ -1,7 +1,10 @@
 .package-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 50px;
+    border: 7px solid rgb(202, 202, 202);
+    background-color: rgba(250, 188, 53, 0.1);
+    box-shadow: 1px 1px 10px rgba(255, 202, 43, 0.5);
 }
 
 @media only screen and (max-width: 688px) {

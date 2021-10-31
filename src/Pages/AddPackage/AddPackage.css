@@ -1,0 +1,31 @@
+.add-package {
+    border: 5px solid grey;
+}
+
+.add-package form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-package form input,
+textarea {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.input-submit {
+    background-color: #ffca2b;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    height: 2.5em;
+    border: 3px solid transparent;
+}
+
+.input-submit:hover {
+    background-color: #f3b703;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+}

@@ -5,7 +5,7 @@ import {
     onAuthStateChanged,
     signOut,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
@@ -86,15 +86,15 @@ const useFirebase = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user);
-                console.log(result.user);
-            })
-            .finally(() => setIsLoading(false))
-            .catch((error) => {
-                console.log(error.message, error.code);
-            });
+        return signInWithPopup(auth, googleProvider);
+        // .then((result) => {
+        //     setUser(result.user);
+        //     console.log(result.user);
+        // })
+        // .finally(() => setIsLoading(false))
+        // .catch((error) => {
+        //     console.log(error.message, error.code);
+        // });
     };
 
     // Observing user state
@@ -122,13 +122,14 @@ const useFirebase = () => {
         error,
         isLoading,
         isLogin,
+        setUser,
         setIsLoading,
         signInUsingGoogle,
         logOut,
         handleRegistration,
         handleEmailChange,
         handlePasswordChange,
-        toggleLogin,
+        toggleLogin
     };
 };
 

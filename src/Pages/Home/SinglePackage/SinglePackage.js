@@ -17,7 +17,7 @@ const SinglePackage = ({ pack }) => {
             <Card.Footer>
                 <Link to={`/package/${_id}`}>
                     <Button variant="warning" className="fw-bold text-white">
-                        Book This Package
+                        Know more and Book
                     </Button>
                 </Link>
             </Card.Footer>
