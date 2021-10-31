@@ -14,7 +14,7 @@ const PackageDetail = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch("http://localhost:5000/packages")
+        fetch("https://chilling-village-47047.herokuapp.com/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
@@ -38,7 +38,7 @@ const PackageDetail = () => {
     const onSubmit = (data) => {
         setForm(data);
         axios
-            .post("http://localhost:5000/orders", {
+            .post("https://chilling-village-47047.herokuapp.com/orders", {
                 ...data,
                 package_id,
                 status

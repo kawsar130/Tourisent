@@ -5,7 +5,7 @@ import ManageSingleOrder from "../ManageSingleOrder/ManageSingleOrder";
 const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/manageOrders")
+        fetch("https://chilling-village-47047.herokuapp.com/manageOrders")
             .then((res) => res.json())
             .then((data) => setBookedPackages(data));
     }, []);

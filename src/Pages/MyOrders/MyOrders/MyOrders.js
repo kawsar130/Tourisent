@@ -9,7 +9,7 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch("http://localhost:5000/myorders")
+        fetch("https://chilling-village-47047.herokuapp.com/myorders")
             .then((res) => res.json())
             .then((data) => setBookedPackages(data));
     }, []);
