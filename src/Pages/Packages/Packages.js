@@ -3,7 +3,7 @@ import React from "react";
 const Packages = () => {
     return (
         <div>
-            <h2>This is Packages Component</h2>
+            <h2>This is all Packages</h2>
         </div>
     );
 };

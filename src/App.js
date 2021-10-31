@@ -6,6 +6,7 @@ import AddPackage from "./Pages/AddPackage/AddPackage";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import ManageOrders from "./Pages/ManageOrders/ManageOrders/ManageOrders";
 import MyOrders from "./Pages/MyOrders/MyOrders/MyOrders";
 
 import NotFound from "./Pages/NotFound/NotFound";
@@ -38,6 +39,9 @@ function App() {
                         </Route>
                         <PrivateRoute path="/myorders">
                             <MyOrders></MyOrders>
+                        </PrivateRoute>
+                        <PrivateRoute path="/manageOrders">
+                            <ManageOrders></ManageOrders>
                         </PrivateRoute>
                         <PrivateRoute path="/addpackage">
                             <AddPackage></AddPackage>

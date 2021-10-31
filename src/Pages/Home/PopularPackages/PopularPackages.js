@@ -14,7 +14,7 @@ const PopularPackages = () => {
     }, []);
 
     return (
-        <div id="packages">
+        <div id="popularPackages">
             <h2 className="mb-3">Most Popular Packages</h2>
             {!packages.length ? (
                 <div style={{ height: "50vh" }}>

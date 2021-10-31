@@ -17,28 +17,32 @@ const Footer = () => {
     return (
         <div className="container-fluid bg-dark text-white p-5">
             <Row>
-                <Col xs={12} sm={3}>
+                <Col xs={12} sm={3} className="services-footer">
                     <h5>Services</h5>
-                    <p>Medical Equipment Supply</p>
-                    <p>Medical Equipment Repair</p>
-                    <p>Equipment Importer</p>
-                </Col>
-                <Col xs={12} sm={3}>
-                    <h5>About</h5>
-                    <p>Company</p>
-                    <p>Team</p>
-                    <p>Career</p>
+                    <p>Travel Consultancy</p>
+                    <p>Travel Agency</p>
+                    <p>Customizable Travel Package</p>
                 </Col>
                 <Col xs={12} sm={6}>
-                    <h5>BlueMediq</h5>
+                    <h5>Tourisent</h5>
                     <p>
-                        BlueMediq is one of the largest Medical Equipment
-                        Supplier company in Bangladesh. We are passionate to
-                        work with humans health that will make the live easier
-                        and trouble-free. We are dedicated to assure you the
-                        best services in medical equipment supplying, servicing,
-                        and repairing.
+                        There's more to life than the robotic lifestyle we all
+                        live these days. From a never-ending list to choose
+                        from, you can select your go-to trip trail and customize
+                        it according to your preferences. Revamp your bucket
+                        list and give wings to your dreamy destinations.
+                        Liberating in the delightful international travel
+                        destinations is no more a task. Give yourself a break
+                        from the monotonous life, explore the breath-taking
+                        beauty through international tourism guide with
+                        Tourisent.
                     </p>
+                </Col>
+                <Col xs={12} sm={3}>
+                    <h5>Contact</h5>
+                    <p>Mobile: 01700-000000</p>
+                    <p>Email: tourisent@gmail.com</p>
+                    <p>Mirpur 2, Dhaka 1216</p>
                 </Col>
             </Row>
             <div>

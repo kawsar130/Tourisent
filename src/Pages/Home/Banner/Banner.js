@@ -10,20 +10,20 @@ const Banner = () => {
                 <img
                     className="d-block w-100"
                     src="https://i.ibb.co/yFD9WFS/banner1.jpg"
-                    alt="Medical Equipment"
+                    alt=""
                 />
                 <Carousel.Caption className="carousel-caption">
-                    <h3 className="banner-title">Equipment that Human need.</h3>
+                    <h3 className="banner-title">Make Some Memory of Life!</h3>
                     <p className="banner-description">
-                        We provide human life supports in emergency.
+                        Memory is a part of life. Make some good memory with us.
                     </p>
                     <Button variant="warning" size="lg">
                         <NavHashLink
                             as={HashLink}
-                            to="/products"
+                            to="/home#popularPackages"
                             className="text-white"
                         >
-                            Shop Now
+                            Book a Tour
                         </NavHashLink>
                     </Button>
                 </Carousel.Caption>
@@ -43,10 +43,10 @@ const Banner = () => {
                     <Button variant="warning" size="lg">
                         <NavHashLink
                             as={HashLink}
-                            to="/home#services"
+                            to="/home#faq"
                             className="text-white"
                         >
-                            Check Services
+                            Check FAQ!
                         </NavHashLink>
                     </Button>
                 </Carousel.Caption>
@@ -59,20 +59,19 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption className="carousel-caption">
-                    <h3 className="banner-title">
-                        Technology that make Sense!
-                    </h3>
+                    <h3 className="banner-title">Stay Optimistic!</h3>
                     <p className="banner-description">
-                        We use the latest and optimistic technology that helps
-                        to be accurate and concise.
+                        We care for your best moment. Subscribe to our news
+                        shelter to know the perfect travelling time when you
+                        need to.
                     </p>
                     <Button variant="warning" size="lg">
                         <NavHashLink
                             as={HashLink}
-                            to="/about"
+                            to="/home#news"
                             className="text-white"
                         >
-                            Know more About Us!
+                            Subscribe
                         </NavHashLink>
                     </Button>
                 </Carousel.Caption>

@@ -38,20 +38,7 @@ const Header = () => {
                         >
                             Home
                         </Nav.Link>
-                        <Nav.Link
-                            as={HashLink}
-                            to="/home#services"
-                            className="nav-text"
-                        >
-                            Services
-                        </Nav.Link>
-                        <Nav.Link
-                            as={HashLink}
-                            to="/packages"
-                            className="nav-text"
-                        >
-                            Packages
-                        </Nav.Link>
+
                         <Nav.Link
                             as={HashLink}
                             to="/about"
@@ -81,6 +68,13 @@ const Header = () => {
                                     className="nav-text"
                                 >
                                     My-Order
+                                </Nav.Link>
+                                <Nav.Link
+                                    as={HashLink}
+                                    to="/manageOrders"
+                                    className="nav-text"
+                                >
+                                    Manage-Orders
                                 </Nav.Link>
                                 <img
                                     src={user.photoURL}

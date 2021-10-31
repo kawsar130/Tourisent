@@ -4,6 +4,7 @@ const NotFound = () => {
     return (
         <div>
             <h2>Error 404!</h2>
+            <img src="https://i.ibb.co/VwFZR6R/404.jpg" alt="" />
         </div>
     );
 };

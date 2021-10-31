@@ -3,7 +3,10 @@ import { Form, Button } from "react-bootstrap";
 
 const NewsShelter = () => {
     return (
-        <div className="container w-50 p-5 my-5 border border-warning border-2 rounded bg-light">
+        <div
+            className="container w-50 p-5 my-5 border border-warning border-2 rounded bg-light"
+            id="news"
+        >
             <h2>Subscribe to our News-Shelter</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

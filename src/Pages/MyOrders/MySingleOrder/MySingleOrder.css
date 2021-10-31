@@ -1,0 +1,30 @@
+.single-order-container {
+    display: flex;
+    width: 75%;
+    margin: auto;
+}
+
+.single-order-img-container {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: auto;
+}
+
+.single-order-img {
+    width: 80%;
+    height: auto;
+}
+
+.my-order-text-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.single-order-button-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    justify-content: center;
+}

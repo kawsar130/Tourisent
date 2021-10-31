@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Spinner, Button } from "react-bootstrap";
-import "./MySingleOrder.css";
 
-const MySingleOrder = (props) => {
-    const { package_id, status } = props.myOrder;
+const ManageSingleOrder = (props) => {
+    const { package_id, status } = props.manageOrder;
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
@@ -16,19 +15,19 @@ const MySingleOrder = (props) => {
         <Spinner animation="border" variant="dark" />;
     }
 
-    const myOrderedPackage = packages.find((pack) => pack._id === package_id);
+    const manageOrderedPackage = packages.find(
+        (pack) => pack._id === package_id
+    );
 
     let name, price, img;
 
-    if (myOrderedPackage) {
-        ({ name, price, img } = myOrderedPackage);
+    if (manageOrderedPackage) {
+        ({ name, price, img } = manageOrderedPackage);
     }
-
-    // delete order function
 
     return (
         <div>
-            {!myOrderedPackage ? (
+            {!manageOrderedPackage ? (
                 <div>
                     <h4>Loading. Please Wait...</h4>
                     <Spinner animation="border" variant="dark" />
@@ -47,7 +46,7 @@ const MySingleOrder = (props) => {
                             <p>Status: {status}</p>
                         </div>
                         <div className="single-order-button-container">
-                            <Button variant="danger">Cancel Booking</Button>
+                            <Button variant="danger">Approve</Button>
                         </div>
                     </div>
                 </div>
@@ -56,4 +55,4 @@ const MySingleOrder = (props) => {
     );
 };
 
-export default MySingleOrder;
+export default ManageSingleOrder;
