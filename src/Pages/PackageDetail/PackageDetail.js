@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Spinner, Button, Table } from "react-bootstrap";
+import { Card, Spinner, Table } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import "./PackageDetail.css";
@@ -31,13 +31,18 @@ const PackageDetail = () => {
     }
 
     const package_id = _id;
+    const status = "Pending";
 
     // react hook form contents
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         setForm(data);
         axios
-            .post("http://localhost:5000/orders", { ...data, package_id })
+            .post("http://localhost:5000/orders", {
+                ...data,
+                package_id,
+                status
+            })
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("Added ID" + res.data.insertedId);

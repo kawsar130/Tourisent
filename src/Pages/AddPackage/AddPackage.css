@@ -1,5 +1,7 @@
 .add-package {
-    border: 5px solid grey;
+    border: 5px solid rgb(207, 207, 207);
+    background-color: rgba(255, 202, 43, 0.1);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
 }
 
 .add-package form {
@@ -11,8 +13,9 @@
 
 .add-package form input,
 textarea {
-    width: 50%;
+    width: 60%;
     margin-bottom: 10px;
+    padding-left: 20px;
 }
 
 .input-submit {

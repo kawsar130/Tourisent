@@ -77,7 +77,7 @@ const Header = () => {
                                 </Nav.Link>
                                 <Nav.Link
                                     as={HashLink}
-                                    to="/myorder"
+                                    to="/myorders"
                                     className="nav-text"
                                 >
                                     My-Order

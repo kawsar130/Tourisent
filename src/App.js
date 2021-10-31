@@ -6,7 +6,8 @@ import AddPackage from "./Pages/AddPackage/AddPackage";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
-import MyOrder from "./Pages/MyOrder/MyOrder";
+import MyOrders from "./Pages/MyOrders/MyOrders/MyOrders";
+
 import NotFound from "./Pages/NotFound/NotFound";
 import PackageDetail from "./Pages/PackageDetail/PackageDetail";
 import Packages from "./Pages/Packages/Packages";
@@ -35,8 +36,8 @@ function App() {
                         <Route path="/about">
                             <About></About>
                         </Route>
-                        <PrivateRoute path="/myorder">
-                            <MyOrder></MyOrder>
+                        <PrivateRoute path="/myorders">
+                            <MyOrders></MyOrders>
                         </PrivateRoute>
                         <PrivateRoute path="/addpackage">
                             <AddPackage></AddPackage>
