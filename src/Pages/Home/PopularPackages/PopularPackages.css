@@ -1,20 +1,28 @@
+#popularPackages {
+    width: 100vw;
+}
+
 .package-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     border: 7px solid rgb(202, 202, 202);
     background-color: rgba(250, 188, 53, 0.1);
     box-shadow: 1px 1px 10px rgba(255, 202, 43, 0.5);
+    width: 80%;
+    margin: auto;
 }
 
 @media only screen and (max-width: 688px) {
     .package-container {
         grid-template-columns: repeat(1, 1fr);
+        width: 100%;
     }
 }
 
-@media only screen and (min-width: 689px) and (max-width: 991px) {
+@media only screen and (min-width: 689px) and (max-width: 1370px) {
     .package-container {
         grid-template-columns: repeat(2, 1fr);
+        width: 80%;
     }
 }

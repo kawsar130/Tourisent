@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Spinner, Button } from "react-bootstrap";
 
+import "./ManageSingleOrder.css";
+
 const ManageSingleOrder = (props) => {
-    const { package_id, status } = props.manageOrder;
+    const { package_id, status, _id } = props.manageOrder;
+    const { handleDelete } = props;
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch("https://chilling-village-47047.herokuapp.com/packages")
+        fetch("http://localhost:5000/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
@@ -33,7 +36,7 @@ const ManageSingleOrder = (props) => {
                     <Spinner animation="border" variant="dark" />
                 </div>
             ) : (
-                <div className="single-order-container border bg-light text-start ps-2 py-2 rounded">
+                <div className="single-order-container border text-start ps-2 py-2 rounded">
                     <div className="single-order-img-container">
                         <img className="single-order-img" src={img} alt="" />
                     </div>
@@ -46,7 +49,12 @@ const ManageSingleOrder = (props) => {
                             <p>Status: {status}</p>
                         </div>
                         <div className="single-order-button-container">
-                            <Button variant="danger">Approve</Button>
+                            <Button
+                                onClick={() => handleDelete(_id)}
+                                variant="danger"
+                            >
+                                Delete Order
+                            </Button>
                         </div>
                     </div>
                 </div>

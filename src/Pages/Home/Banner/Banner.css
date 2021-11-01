@@ -1,16 +1,41 @@
+.carousel-item {
+    width: 100vw;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
 .text-white {
     text-decoration: none;
 }
 
 .banner-title {
-    font-size: 3vmax;
+    font-size: 6vmin;
 }
 
 .banner-description {
-    font-size: 1.1vmax;
+    font-size: 3.5vmin;
 }
 
 .carousel-caption {
     background: rgba(80, 4, 4, 0.2);
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 688px) {
+    .carousel-container {
+        height: 70vh;
+    }
+    .carousel-img {
+        height: 70vh;
+        object-fit: none;
+        object-position: 50% 50%;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+    .package-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

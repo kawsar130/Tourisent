@@ -8,21 +8,21 @@ import "./PopularPackages.css";
 const PopularPackages = () => {
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        fetch("https://chilling-village-47047.herokuapp.com/packages")
+        fetch("http://localhost:5000/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
 
     return (
         <div id="popularPackages">
-            <h2 className="mb-3">Most Popular Packages</h2>
+            <h2 className="mb-3 mt-4">Most Popular Packages</h2>
             {!packages.length ? (
                 <div style={{ height: "50vh" }}>
                     <p className="fs-5 fw-bold">Loading! Please Wait...</p>
                     <Spinner animation="border" variant="dark" />
                 </div>
             ) : (
-                <div className="package-container container p-5">
+                <div className="package-container p-5">
                     {packages.map((pack) => (
                         <SinglePackage
                             key={pack._id}

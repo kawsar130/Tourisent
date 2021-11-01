@@ -54,7 +54,7 @@ const Header = () => {
                             FAQ
                         </Nav.Link>
                         {user?.email ? (
-                            <div className="user-info">
+                            <>
                                 <Nav.Link
                                     as={HashLink}
                                     to="/addpackage"
@@ -74,7 +74,7 @@ const Header = () => {
                                     to="/manageOrders"
                                     className="nav-text"
                                 >
-                                    Manage-Orders
+                                    All-Orders
                                 </Nav.Link>
                                 <img
                                     src={user.photoURL}
@@ -90,7 +90,7 @@ const Header = () => {
                                 >
                                     {logoutIcon}
                                 </Button>
-                            </div>
+                            </>
                         ) : (
                             <Nav.Link
                                 as={Link}

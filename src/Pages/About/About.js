@@ -1,10 +1,11 @@
 import React from "react";
+import "./About.css";
 
 const About = () => {
     return (
-        <div>
+        <div className="about-container">
             <img src="https://i.ibb.co/1dzj1Fy/about.jpg" alt="" />
-            <div>
+            <div className=" mt-4">
                 <h2>About Us</h2>
                 <p>
                     Hey there traveller. We know you want to see the world. We

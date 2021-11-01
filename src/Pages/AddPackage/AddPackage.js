@@ -3,21 +3,21 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "./AddPackage.css";
 
+// heroku server: http://localhost:5000
+
 const AddPackage = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        axios
-            .post("https://chilling-village-47047.herokuapp.com/packages", data)
-            .then((res) => {
-                if (res.data.insertedId) {
-                    alert("Custom Package added successfully");
-                    reset();
-                }
-            });
+        axios.post("http://localhost:5000/packages", data).then((res) => {
+            if (res.data.insertedId) {
+                alert("Custom Package added successfully");
+                reset();
+            }
+        });
     };
     return (
-        <div className="add-package container p-5 my-5 rounded">
+        <div className="add-package my-5 rounded">
             <h2 className="mb-4">You can add your custom package form here:</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input

@@ -14,7 +14,7 @@ const PackageDetail = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch("https://chilling-village-47047.herokuapp.com/packages")
+        fetch("http://localhost:5000/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
@@ -38,14 +38,14 @@ const PackageDetail = () => {
     const onSubmit = (data) => {
         setForm(data);
         axios
-            .post("https://chilling-village-47047.herokuapp.com/orders", {
+            .post("http://localhost:5000/orders", {
                 ...data,
                 package_id,
                 status
             })
             .then((res) => {
                 if (res.data.insertedId) {
-                    alert("Added ID" + res.data.insertedId);
+                    alert(`You have successfully Booked ${name} package`);
                     reset();
                     setIsSubmitted(true);
                 }
@@ -54,7 +54,10 @@ const PackageDetail = () => {
 
     return (
         <div>
-            <Card className="text-center m-5 w-50 mx-auto" border="info">
+            <Card
+                className="package-detail-container container text-center m-5 mx-auto"
+                border="info"
+            >
                 <Card.Header className="fw-bold">
                     Package Name: {name}
                 </Card.Header>
@@ -68,96 +71,109 @@ const PackageDetail = () => {
                 <Card.Footer className="fw-bold">
                     Package Price: {price} Taka
                 </Card.Footer>
-                <div className="package-detail container p-5 my-5 rounded">
-                    <h2 className="mb-4">Fill-up this form for Booking</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input
-                            {...register("name", {
-                                required: true,
-                                maxLength: 30
-                            })}
-                            placeholder="Package Name"
-                            value={user.displayName}
-                        />
-                        <input
-                            type="email"
-                            {...register("email", { required: true })}
-                            placeholder="Your Email"
-                            value={user.email}
-                        />
-                        <input
-                            {...register("mobile", {
-                                required: true,
-                                maxLength: 20
-                            })}
-                            placeholder="Mobile Number (with country code)"
-                        />
-                        <textarea
-                            {...register("address")}
-                            placeholder="Your full address"
-                        />
-                        <input
-                            type="number"
-                            {...register("zip")}
-                            placeholder="Zip Code"
-                        />
-                        <input
-                            className="input-submit rounded"
-                            type="submit"
-                            value="Confirm Booking"
-                        />
 
-                        {isSubmitted ? (
-                            <div className="container">
-                                <Table striped bordered hover className="mt-5">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="4">Booking Receipt</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Passenger Name:</td>
-                                            <td> {form.name}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email:</td>
-                                            <td>{form.email}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mobile:</td>
-                                            <td>{form.mobile}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Address:</td>
-                                            <td>{form.address}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zip:</td>
-                                            <td>{form.zip}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Package Booked:</td>
-                                            <td>{name}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Amount to be Paid:</td>
-                                            <td>{price}</td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                                <p className="fw-bold fs-4">
-                                    Congratulation! Your order has placed.
-                                </p>
-                            </div>
-                        ) : (
-                            <p className="fw-bold">
-                                Please Fill up the Form and Submit to get your
-                                your Booking receipt.
+                <h2 className="mb-3 mt-5">Fill-up this form for Booking</h2>
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="package-booking-form rounded"
+                >
+                    <input
+                        {...register("name", {
+                            required: true,
+                            maxLength: 30
+                        })}
+                        placeholder="Package Name"
+                        value={user.displayName}
+                        className="booking-input"
+                    />
+                    <input
+                        type="email"
+                        {...register("email", { required: true })}
+                        placeholder="Your Email"
+                        value={user.email}
+                        className="booking-input"
+                    />
+                    <input
+                        {...register("mobile", {
+                            required: true,
+                            maxLength: 20
+                        })}
+                        placeholder="Mobile Number (with country code)"
+                        className="booking-input"
+                    />
+                    <textarea
+                        {...register("address")}
+                        placeholder="Your full address"
+                        className="booking-input"
+                    />
+                    <input
+                        type="number"
+                        {...register("zip")}
+                        placeholder="Zip Code"
+                        className="booking-input"
+                    />
+                    <input
+                        className="input-submit rounded"
+                        type="submit"
+                        value="Confirm Booking"
+                    />
+
+                    {isSubmitted ? (
+                        <div className="container">
+                            <Table
+                                responsive
+                                striped
+                                bordered
+                                hover
+                                className="mt-5"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">Booking Receipt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Passenger Name:</td>
+                                        <td> {form.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td>{form.email}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile:</td>
+                                        <td>{form.mobile}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address:</td>
+                                        <td>{form.address}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zip:</td>
+                                        <td>{form.zip}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Package Booked:</td>
+                                        <td>{name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amount to be Paid:</td>
+                                        <td>BDT. {price}</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                            <p className="fw-bold fs-4">
+                                Congratulation! Your order has placed.
                             </p>
-                        )}
-                    </form>
-                </div>
+                        </div>
+                    ) : (
+                        <p className="fw-bold">
+                            Please Fill up the Form and Submit to get your your
+                            Booking receipt.
+                        </p>
+                    )}
+                </form>
             </Card>
         </div>
     );

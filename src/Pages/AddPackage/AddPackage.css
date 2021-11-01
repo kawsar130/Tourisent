@@ -16,6 +16,7 @@ textarea {
     width: 60%;
     margin-bottom: 10px;
     padding-left: 20px;
+    height: 4em;
 }
 
 .input-submit {
@@ -31,4 +32,13 @@ textarea {
     background-color: #f3b703;
     border: 3px solid rgba(0, 0, 0, 0.5);
     transition: all 0.5s;
+}
+
+@media only screen and (max-width: 688px) {
+    .add-package form input {
+        width: 95%;
+    }
+    .add-package form textarea {
+        width: 95%;
+    }
 }

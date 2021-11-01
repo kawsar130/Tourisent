@@ -5,10 +5,10 @@ import "./Banner.css";
 
 const Banner = () => {
     return (
-        <Carousel className="pb-5" fade id="home">
-            <Carousel.Item>
+        <Carousel className="pb-5 carousel-container" fade id="home">
+            <Carousel.Item className="carousel-item">
                 <img
-                    className="d-block w-100"
+                    className="d-block carousel-img"
                     src="https://i.ibb.co/yFD9WFS/banner1.jpg"
                     alt=""
                 />
@@ -28,9 +28,9 @@ const Banner = () => {
                     </Button>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item carousel-item>
                 <img
-                    className="d-block w-100"
+                    className="d-block carousel-img"
                     src="https://i.ibb.co/Cbk4ksL/banner2.jpg"
                     alt="Second slide"
                 />
@@ -51,9 +51,9 @@ const Banner = () => {
                     </Button>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item carousel-item>
                 <img
-                    className="d-block w-100"
+                    className="d-block carousel-img"
                     src="https://i.ibb.co/cbvW2LS/banner3.jpg"
                     alt="Third slide"
                 />

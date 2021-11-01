@@ -3,11 +3,12 @@ import { Spinner, Button } from "react-bootstrap";
 import "./MySingleOrder.css";
 
 const MySingleOrder = (props) => {
-    const { package_id, status } = props.myOrder;
+    const { package_id, status, _id } = props.myOrder;
+    const { handleDelete } = props;
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch("https://chilling-village-47047.herokuapp.com/packages")
+        fetch("http://localhost:5000/packages")
             .then((res) => res.json())
             .then((data) => setPackages(data));
     }, []);
@@ -23,8 +24,6 @@ const MySingleOrder = (props) => {
     if (myOrderedPackage) {
         ({ name, price, img } = myOrderedPackage);
     }
-
-    // delete order function
 
     return (
         <div>
@@ -47,7 +46,12 @@ const MySingleOrder = (props) => {
                             <p>Status: {status}</p>
                         </div>
                         <div className="single-order-button-container">
-                            <Button variant="danger">Cancel Booking</Button>
+                            <Button
+                                onClick={() => handleDelete(_id)}
+                                variant="danger"
+                            >
+                                Cancel
+                            </Button>
                         </div>
                     </div>
                 </div>

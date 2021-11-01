@@ -1,19 +1,19 @@
-.package-detail {
-    border-bottom: 1px solid lightsalmon;
+.package-detail-container {
+    width: 60%;
 }
 
-.package-detail form {
+.package-booking-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.package-detail form input,
-textarea {
-    width: 60%;
+.booking-input {
+    width: 70%;
     margin-bottom: 10px;
     padding-left: 20px;
+    height: 3em;
 }
 
 .input-submit {
@@ -29,4 +29,31 @@ textarea {
     background-color: #f3b703;
     border: 3px solid rgba(0, 0, 0, 0.5);
     transition: all 0.5s;
+}
+
+@media only screen and (max-width: 688px) {
+    .package-detail-container {
+        width: 95%;
+    }
+    .package-booking-form .booking-input {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 899px) {
+    .package-detail-container {
+        width: 70%;
+    }
+    .package-booking-form .booking-input {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1370px) {
+    .package-detail-container {
+        width: 60%;
+    }
+    .package-booking-form .booking-input {
+        width: 60%;
+    }
 }

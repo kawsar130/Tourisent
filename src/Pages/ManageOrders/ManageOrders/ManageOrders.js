@@ -4,11 +4,25 @@ import ManageSingleOrder from "../ManageSingleOrder/ManageSingleOrder";
 
 const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
+    const [deleteCount, setDeleteCount] = useState(false);
     useEffect(() => {
-        fetch("https://chilling-village-47047.herokuapp.com/manageOrders")
+        fetch("http://localhost:5000/manageOrders")
             .then((res) => res.json())
             .then((data) => setBookedPackages(data));
-    }, []);
+    }, [bookedPackages]);
+
+    // Handling delete
+    const handleDelete = (id) => {
+        const confirmation = window.confirm("Are you sure to cancel?");
+        if (confirmation) {
+            fetch(`http://localhost:5000/manageorders/delete/${id}`, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" }
+            })
+                .then((res) => res.json())
+                .then((result) => setDeleteCount(result));
+        }
+    };
 
     if (!bookedPackages) {
         <Spinner animation="border" variant="dark" />;
@@ -16,18 +30,26 @@ const ManageOrders = () => {
 
     return (
         <div>
-            <h2 className="mb-2 mt-5">All Booked Packages</h2>
             {!bookedPackages.length ? (
                 <div style={{ height: "50vh" }}>
-                    <p className="fs-5 fw-bold">Loading! Please Wait...</p>
-                    <Spinner animation="border" variant="dark" />
+                    <h1 className="mt-5">No Orders found!</h1>
                 </div>
             ) : (
-                <div className="booked-container container p-5">
+                <div className="booked-container container mb-5">
+                    <h1 className="mt-5 border border-5 p-3 w-75 mx-auto rounded">
+                        Admin Panel
+                    </h1>
+                    <h2 className="mb-2 mt-5">All Booked Packages</h2>
+                    {deleteCount ? (
+                        <p>Order deleted Successfully</p>
+                    ) : (
+                        <p>Manage all orders from here.</p>
+                    )}
                     {bookedPackages.map((manageOrder) => (
                         <ManageSingleOrder
                             key={manageOrder._id}
                             manageOrder={manageOrder}
+                            handleDelete={handleDelete}
                         ></ManageSingleOrder>
                     ))}
                 </div>

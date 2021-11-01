@@ -1,7 +1,42 @@
+.login-form {
+    width: 50%;
+}
+
 .user-checkbox-container {
     display: flex;
 }
 
 .new-user-checkbox {
     color: rgb(46, 46, 139);
+}
+
+.google-login {
+    width: 50%;
+}
+
+@media only screen and (max-width: 688px) {
+    .login-form {
+        width: 95%;
+    }
+    .google-login {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 899px) {
+    .login-form {
+        width: 70%;
+    }
+    .google-login {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1370px) {
+    .login-form {
+        width: 60%;
+    }
+    .google-login {
+        width: 60%;
+    }
 }

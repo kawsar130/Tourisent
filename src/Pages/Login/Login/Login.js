@@ -35,7 +35,7 @@ const Login = () => {
     };
 
     return (
-        <div className="p-5 mx-5">
+        <div>
             {user.email ? (
                 <div className="pt-5">
                     <img src={user.photoURL} alt="" />
@@ -54,7 +54,7 @@ const Login = () => {
 
                     <form
                         onSubmit={handleRegistration}
-                        className="w-75 m-auto mt-4 border border-2 border-warning rounded p-4 bg-light"
+                        className=" login-form m-auto mt-4 border border-2 border-warning rounded p-4 bg-light"
                     >
                         <div className="row mb-3">
                             <label
@@ -117,7 +117,7 @@ const Login = () => {
                     </form>
 
                     <br />
-                    <div className="mt-3 border border-2 border-warning rounded p-4 bg-light w-75 mx-auto mb-5">
+                    <div className="google-login mt-3 border border-2 border-warning rounded p-4 bg-light mx-auto mb-5">
                         <h3 className="mb-4">
                             You can also sign in with Google
                         </h3>
