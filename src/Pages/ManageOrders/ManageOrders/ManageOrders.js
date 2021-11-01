@@ -6,7 +6,7 @@ const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
     const [deleteCount, setDeleteCount] = useState(false);
     useEffect(() => {
-        fetch("http://localhost:5000/manageOrders")
+        fetch("https://chilling-village-47047.herokuapp.com/manageOrders")
             .then((res) => res.json())
             .then((data) => setBookedPackages(data));
     }, [bookedPackages]);
@@ -15,10 +15,13 @@ const ManageOrders = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm("Are you sure to cancel?");
         if (confirmation) {
-            fetch(`http://localhost:5000/manageorders/delete/${id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
+            fetch(
+                `https://chilling-village-47047.herokuapp.com/manageorders/delete/${id}`,
+                {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => setDeleteCount(result));
         }

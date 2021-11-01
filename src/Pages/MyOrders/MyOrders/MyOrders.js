@@ -11,7 +11,7 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch("http://localhost:5000/myorders")
+        fetch("https://chilling-village-47047.herokuapp.com/myorders")
             .then((res) => res.json())
             .then((data) => setBookedPackages(data));
     }, [bookedPackages]);
@@ -20,10 +20,13 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm("Are you sure to cancel?");
         if (confirmation) {
-            fetch(`http://localhost:5000/myorders/delete/${id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
+            fetch(
+                `https://chilling-village-47047.herokuapp.com/myorders/delete/${id}`,
+                {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" }
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => setDeleteCount(result));
         }

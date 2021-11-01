@@ -3,18 +3,18 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "./AddPackage.css";
 
-// heroku server: http://localhost:5000
-
 const AddPackage = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        axios.post("http://localhost:5000/packages", data).then((res) => {
-            if (res.data.insertedId) {
-                alert("Custom Package added successfully");
-                reset();
-            }
-        });
+        axios
+            .post("https://chilling-village-47047.herokuapp.com/packages", data)
+            .then((res) => {
+                if (res.data.insertedId) {
+                    alert("Custom Package added successfully");
+                    reset();
+                }
+            });
     };
     return (
         <div className="add-package my-5 rounded">
